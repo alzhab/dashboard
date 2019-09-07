@@ -1,0 +1,53 @@
+<section class="chat">
+
+  <!-- TO DO LIST 
+    Сделать second-menu  общим компонентом
+  -->
+  <div class="second-menu" [class.second-menu--open]="showSecondMenu">
+    <div class="second-menu__body">
+      <div class="second-menu__tabs">
+        <app-component-tabs [tabs-list]="tabsList" [tab-active]="tabActive" (tabChanged)="tabChange($event)">
+        </app-component-tabs>
+      </div>
+
+      <div class="second-menu__filter">
+        <p>Filter messages: </p>
+
+        <app-component-filter [filter-list]="filterList" [filter-active]="filterActive"
+          (filterChanged)="filterChange($event)"></app-component-filter>
+      </div>
+    </div>
+
+    <div class="second-menu__footer animated slideInDown delay-1s faster" (click)="toggleSecondMenu()"
+      [class.second-menu__footer--open]="showSecondMenu">
+      <span class="material-icons">sort</span>
+    </div>
+  </div>
+
+  <div class="chat__body">
+    <div class="chat__list animated slideInLeft faster">
+      <div class="chat__card" *ngFor="let mail of mailsList" (click)="setMailActive(mail)"
+        [class.active]="mail === activeMail">
+        <div class="card__author-detail">
+          <div class="card__author">
+            <a href="">
+              <img [src]="'../../assets/img/' + mail.avatar" alt="">
+            </a>
+            <p>{{mail.name}}</p>
+          </div>
+
+          <p class="card__date" [class.readed]="mail.readed">{{mail.date}}</p>
+        </div>
+
+        <p class="card__message">
+          {{mail.message}}
+        </p>
+      </div>
+
+      <div class="chat__card chat__card--last">
+        <div class="card__button"><span>+</span> New coversation</div>
+      </div>
+    </div>
+  </div>
+
+</section>

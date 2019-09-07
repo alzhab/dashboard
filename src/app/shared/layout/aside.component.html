@@ -1,0 +1,19 @@
+<aside class="aside" [class.aside-mobile]="asideOpen">
+  <ul class="aside__menu">
+    <li [class.active]="isActiveLink('')"><a (click)="changeRouter('')"><span class="material-icons">home</span></a>
+    </li>
+
+    <li [class.active]="isActiveLink('projects')"><a (click)="changeRouter('')"><span
+          class="material-icons">assignment</span></a>
+    </li>
+
+    <li [class.active]="isActiveLink('graph')"><a (click)="changeRouter('')"><span
+          class="material-icons">trending_up</span></a></li>
+
+    <li [class.active]="isActiveLink('chat')"><a (click)="changeRouter('chat')"><span
+          class="material-icons">email</span></a></li>
+
+    <li [class.active]="isActiveLink('members')"><a (click)="changeRouter('')"><span
+          class="material-icons">supervisor_account</span></a></li>
+  </ul>
+</aside>

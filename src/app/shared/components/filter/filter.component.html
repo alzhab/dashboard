@@ -1,0 +1,7 @@
+<div class="filter" [class.filter--open]="filterOpen" (click)="filterToggle()">
+  <p class="filter__active">{{filterActive}}</p>
+  <ul class="filter__list" *ngIf="filterOpen" [@enterAnimation]>
+    <li *ngFor="let filter of filterList" (click)="changeFilter(filter)">{{filter}}</li>
+  </ul>
+  <span class="material-icons">keyboard_arrow_down</span>
+</div>

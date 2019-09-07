@@ -1,0 +1,6 @@
+<ul class="tabs">
+  <li *ngFor="let tab of tabsList" [class.active]="tab.text === tabActive" (click)="changeTab(tab.text)">
+    <span class="material-icons">{{tab.icon}}</span>
+    <p>{{tab.text}}</p>
+  </li>
+</ul>

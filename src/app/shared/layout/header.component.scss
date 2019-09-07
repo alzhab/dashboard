@@ -1,0 +1,222 @@
+@import "../../../assets/scss/theme.scss";
+
+.header {
+  width: 100%;
+  background: $brand-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 10px;
+  box-shadow: 0 3px 80px rgba(23, 24, 32, 0.2);
+  position: relative;
+  z-index: 100;
+}
+
+.site-logo {
+  margin-bottom: 25px;
+  display: none;
+}
+
+.site-menu {
+  color: #fff;
+  font-size: 1.5rem;
+  display: block;
+  cursor: pointer;
+}
+
+.header__buttons {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.buttons-right {
+  display: flex;
+  align-items: center;
+}
+
+.add-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 24px;
+  border: 2px solid $active-color;
+  background: none;
+  height: 40px;
+  padding: 0 15px;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s ease all;
+  &:hover {
+    background: $active-color;
+    span {
+      color: #fff;
+    }
+  }
+  span {
+    color: $active-color;
+    font-size: 1.5rem;
+    display: block;
+    padding-left: 20px;
+  }
+}
+
+.notification-box {
+  position: relative;
+  margin-left: 25px;
+}
+
+.notification-box__notification {
+  font-size: 2rem;
+  color: #fff;
+  position: relative;
+  cursor: pointer;
+  &.active:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 12px;
+    height: 12px;
+    border: 3px solid #2f3242;
+    background-color: $active-color;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    transition: 0.3s ease all;
+    animation: roundPulse 0.8s infinite linear;
+  }
+}
+
+@keyframes roundPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+}
+
+.notification-box__notification--active {
+  color: $active-color;
+}
+
+.notification-box__list {
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  bottom: -15px;
+  right: 0;
+  z-index: 5;
+  transition: 0.3s ease all;
+  transform: translateY(100%);
+  li {
+    background: $brand-color;
+    list-style: none;
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    border-bottom: 1px solid $active-color;
+    a {
+      display: flex;
+      align-items: center;
+      padding: 5px 10px;
+      color: #fff;
+      transition: 0.3s ease all;
+      cursor: pointer;
+      .avatar {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        overflow: hidden;
+        display: block;
+        margin-right: 10px;
+      }
+      .body {
+        display: flex;
+        flex-direction: column;
+        .author {
+          font-size: 1rem;
+          font-weight: 700;
+          margin-bottom: 5px;
+        }
+        .desc {
+          font-size: 0.8rem;
+        }
+      }
+      &:hover {
+        background: $active-color;
+      }
+    }
+    span {
+      padding: 20px 15px;
+      color: #fff;
+      display: block;
+      cursor: pointer;
+      &:hover {
+        background: $active-color;
+      }
+    }
+  }
+}
+
+.portfolio {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 25px;
+}
+
+.portfolio__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.portfolio__arrow {
+  color: #fff;
+  margin-left: 12px;
+}
+
+@media (min-width: 426px) {
+
+}
+
+@media (min-width: 769px) {
+  .header {
+    padding: 20px 25px;
+    flex-direction: row;
+  }
+  .site-menu {
+    display: none;
+  }
+  .site-logo {
+    display: block;
+    margin-bottom: 0;
+  }
+  .notification-box {
+    margin-left: 50px;
+  }
+  .header__buttons {
+    width: initial;
+  }
+  .portfolio {
+    margin-left: 50px;
+  }
+  .portfolio__avatar {
+    width: 56px;
+    height: 56px;
+  }
+  .add-button {
+    height: 48px;
+    padding: 0 20px;
+  }
+  .notification-box__list {
+    bottom: -30px;
+  }
+}

@@ -1,0 +1,38 @@
+<header class="header">
+  <div class="site-logo">
+    <img src="../../../../assets/img/logo.png" width="172px" height="29px"
+      srcset="../../../../assets/img/logo@2x.png 2x" alt="">
+  </div>
+
+  <div class="header__buttons">
+    <div class="buttons__left">
+      <span class="site-menu material-icons" (click)="menuToggle()">menu</span>
+    </div>
+
+    <div class="buttons-right">
+      <button class="add-button">Add <span>+</span></button>
+      <div class="notification-box">
+        <span class="notification-box__notification material-icons" [class.active]="notificationList?.length"
+          [class.notification-box__notification--active]="openNotList && notificationList?.length"
+          (click)="toggleNotificationList()">notifications_none</span>
+        <ul class="notification-box__list" *ngIf="openNotList" [@enterAnimation]>
+          <li *ngFor="let not of notificationList; let id = index" (click)="removeNotification(index)">
+            <a>
+              <div class="avatar"><img [src]="'../../../assets/img/' + not.avatar" alt=""></div>
+              <div class="body">
+                <p class="author">{{not.author}}</p>
+                <p class="desc">{{not.description}}</p>
+              </div>
+            </a>
+            <span class="material-icons">done</span></li>
+        </ul>
+      </div>
+      <div class="portfolio">
+        <div class="portfolio__avatar">
+          <img src="../../../assets/img/avatar.jpg" alt="">
+        </div>
+        <span class=" material-icons portfolio__arrow">keyboard_arrow_down</span>
+      </div>
+    </div>
+  </div>
+</header>
