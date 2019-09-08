@@ -18,6 +18,7 @@ export class ChatComponent implements OnInit {
   /*----------  Переменные для чатов  ----------*/
   public mailsList;
   public activeMail;
+  public chatListOpen = false;
 
   constructor(private _chatService: ChatService) {}
 
@@ -42,6 +43,10 @@ export class ChatComponent implements OnInit {
   setMailActive(mail) {
     this._chatService.setActiveMail(mail);
     this.getMailActive();
+  }
+
+  toggleChatList() {
+    this.chatListOpen = !this.chatListOpen;
   }
 
   /*----------  Функции для фильтра  ----------*/

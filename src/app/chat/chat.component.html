@@ -6,23 +6,29 @@
   </app-component-second-menu>
 
   <div class="chat__body">
-    <div class="chat__list animated slideInLeft faster">
-      <div class="chat__card" *ngFor="let mail of mailsList" (click)="setMailActive(mail)"
-        [class.active]="mail === activeMail">
-        <div class="card__author-detail">
-          <div class="card__author">
-            <a href="">
-              <img [src]="'../../assets/img/' + mail.avatar" alt="">
-            </a>
-            <p>{{mail.name}}</p>
+    <div class="chat__list animated slideInLeft faster" [class.chat__list--open]="chatListOpen">
+      <div class="arrow" (click)="toggleChatList()" [class.open]="chatListOpen">
+        <span class="material-icons">keyboard_arrow_right</span>
+      </div>
+
+      <div class="scroll-container">
+        <div class="chat__card" *ngFor="let mail of mailsList" (click)="setMailActive(mail)"
+          [class.active]="mail === activeMail">
+          <div class="card__author-detail">
+            <div class="card__author">
+              <a href="">
+                <img [src]="'../../assets/img/' + mail.avatar" alt="">
+              </a>
+              <p>{{mail.name}}</p>
+            </div>
+
+            <p class="card__date" [class.readed]="mail.readed">{{mail.date}}</p>
           </div>
 
-          <p class="card__date" [class.readed]="mail.readed">{{mail.date}}</p>
+          <p class="card__message">
+            {{mail.message}}
+          </p>
         </div>
-
-        <p class="card__message">
-          {{mail.message}}
-        </p>
       </div>
 
       <div class="chat__card chat__card--last">
