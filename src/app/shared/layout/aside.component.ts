@@ -22,6 +22,9 @@ export class AsideComponent implements OnInit {
     this._subscription = this._asideService.asideUpdated.subscribe(value => {
       this.asideOpen = value;
     });
+    window.onresize = e => {
+      this.asideOpen = false;
+    };
   }
 
   ngOnInit() {}

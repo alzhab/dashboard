@@ -1,5 +1,20 @@
 @import "../../../assets/scss/theme.scss";
 
+.back {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: #000;
+  opacity: 0.7;
+  z-index: 43;
+  display: none;
+  &.open {
+    display: block;
+  }
+}
+
 .aside {
   width: 100px;
   height: 100%;
@@ -48,6 +63,10 @@
 }
 
 @media (min-width: 769px) {
+  .back {
+    display: none !important;
+  }
+
   .aside-mobile {
     transform: translateX(0);
   }

@@ -39,8 +39,130 @@
     </div>
 
     <!-- Окно чата -->
-    <div class="chat__window animated slideInLeft faster" [class.chat__window--close]="chatListOpen">
-      <div class="scroll-container">
+    <div class="chat__window animated slideInRight fast" [class.chat__window--close]="!windowOpen">
+
+
+      <div class="scroll-container" #chatScroller>
+        <div class="chat__message">
+          <a class="avatar">
+            <img src="../../assets/img/author1.png" alt="" />
+          </a>
+          <div class="message">
+            <p>
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ulla pariatur Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere tempora,
+              sed quaerat magnam eligendi facilis consequatur id pariatur adipisci accusamus quisquam accusantium
+              impedit mollitia consectetur beatae, dolorem ab voluptates deleniti?
+            </p>
+            <span>4 April 2016, 5:32 PM</span>
+          </div>
+        </div>
+
+        <div class="chat__message user-message">
+          <a class="avatar">
+            <img src="../../assets/img/author1.png" alt="" />
+          </a>
+          <div class="message">
+            <p>
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ulla pariatur Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere tempora,
+              sed quaerat magnam eligendi facilis consequatur id pariatur adipisci accusamus quisquam accusantium
+              impedit mollitia consectetur beatae, dolorem ab voluptates deleniti?
+            </p>
+            <span>4 April 2016, 5:32 PM</span>
+          </div>
+        </div>
+
+        <div class="chat__message">
+          <a class="avatar">
+            <img src="../../assets/img/author1.png" alt="" />
+          </a>
+          <div class="message">
+            <p>
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ulla pariatur Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere tempora,
+              sed quaerat magnam eligendi facilis consequatur id pariatur adipisci accusamus quisquam accusantium
+              impedit mollitia consectetur beatae, dolorem ab voluptates deleniti?
+            </p>
+            <span>4 April 2016, 5:32 PM</span>
+          </div>
+        </div>
+
+        <div class="chat__message user-message">
+          <a class="avatar">
+            <img src="../../assets/img/author1.png" alt="" />
+          </a>
+          <div class="message">
+            <p>
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ulla pariatur Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere tempora,
+              sed quaerat magnam eligendi facilis consequatur id pariatur adipisci accusamus quisquam accusantium
+              impedit mollitia consectetur beatae, dolorem ab voluptates deleniti?
+            </p>
+            <span>4 April 2016, 5:32 PM</span>
+          </div>
+        </div>
+
+        <div class="chat__message">
+          <a class="avatar">
+            <img src="../../assets/img/author1.png" alt="" />
+          </a>
+          <div class="message">
+            <p>
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ulla pariatur Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere tempora,
+              sed quaerat magnam eligendi facilis consequatur id pariatur adipisci accusamus quisquam accusantium
+              impedit mollitia consectetur beatae, dolorem ab voluptates deleniti?
+            </p>
+            <span>4 April 2016, 5:32 PM</span>
+          </div>
+        </div>
+
+        <div class="chat__message user-message">
+          <a class="avatar">
+            <img src="../../assets/img/author1.png" alt="" />
+          </a>
+          <div class="message">
+            <p>
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ulla pariatur Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere tempora,
+              sed quaerat magnam eligendi facilis consequatur id pariatur adipisci accusamus quisquam accusantium
+              impedit mollitia consectetur beatae, dolorem ab voluptates deleniti?
+            </p>
+            <span>4 April 2016, 5:32 PM</span>
+          </div>
+        </div>
+
+        <div class="chat__message">
+          <a class="avatar">
+            <img src="../../assets/img/author1.png" alt="" />
+          </a>
+          <div class="message">
+            <p>
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ulla pariatur Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere tempora,
+              sed quaerat magnam eligendi facilis consequatur id pariatur adipisci accusamus quisquam accusantium
+              impedit mollitia consectetur beatae, dolorem ab voluptates deleniti?
+            </p>
+            <span>4 April 2016, 5:32 PM</span>
+          </div>
+        </div>
+
+        <div class="chat__message user-message">
+          <a class="avatar">
+            <img src="../../assets/img/author1.png" alt="" />
+          </a>
+          <div class="message">
+            <p>
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ulla pariatur Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere tempora,
+              sed quaerat magnam eligendi facilis consequatur id pariatur adipisci accusamus quisquam accusantium
+              impedit mollitia consectetur beatae, dolorem ab voluptates deleniti?
+            </p>
+            <span>4 April 2016, 5:32 PM</span>
+          </div>
+        </div>
+
         <div class="chat__message">
           <a class="avatar">
             <img src="../../assets/img/author1.png" alt="" />
@@ -81,6 +203,52 @@
             </label>
           </div>
         </form>
+      </div>
+    </div>
+
+    <!-- Профиль пользователя -->
+    <div class="chat__profile" [class.chat__profile--open]="profileOpen">
+      <div class="arrow" [class.open]="profileOpen" (click)="toggleProfile()">
+        <span class="material-icons">keyboard_arrow_left</span>
+      </div>
+
+      <div class="scroll-container">
+        <div class="avatar onlnie">
+          <img src="../../assets/img/avatar-chat.png" alt="">
+        </div>
+
+        <div class="info">
+          <h2>Lyall Roach</h2>
+          <span>UX/UI Designer</span>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore
+            magna aliqua. Ut enim
+          </p>
+        </div>
+
+        <ul class="contacts">
+          <li>
+            <span>Email</span>
+            <p>lyallroach@gmail.com</p>
+          </li>
+
+          <li>
+            <span>Phone</span>
+            <p>+48 500 400 300</p>
+          </li>
+
+          <li>
+            <span>Adress</span>
+            <p>65 Lorem St, Warsaw, PL</p>
+          </li>
+
+          <li>
+            <span>Organization</span>
+            <p>Symu.co</p>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

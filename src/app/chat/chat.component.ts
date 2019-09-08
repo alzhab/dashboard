@@ -1,4 +1,10 @@
-import { Component, OnInit, HostListener } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  HostListener,
+  ViewChild,
+  ElementRef
+} from "@angular/core";
 import { ChatService } from "../core";
 
 @Component({
@@ -7,6 +13,13 @@ import { ChatService } from "../core";
   styleUrls: ["./chat.component.scss"]
 })
 export class ChatComponent implements OnInit {
+  /**
+   *
+   * TO DO LIST
+   * scrollToEnd() при загрузке страницы
+   *
+   */
+
   /*----------  Переменные для фильтра  ----------*/
   public filterList;
   public filterActive;
@@ -19,14 +32,30 @@ export class ChatComponent implements OnInit {
   public mailsList;
   public activeMail;
   public chatListOpen;
+  public profileOpen = false;
+  public windowOpen = true;
+  @ViewChild("chatScroller", { static: false }) chatScroller: ElementRef;
 
   constructor(private _chatService: ChatService) {
+    // Если размер окна больше телефона то список чатов будет виден сразу
     if (window.innerWidth >= 769) {
       this.chatListOpen = true;
     }
+    window.onresize = e => {
+      if (window.innerWidth >= 769) {
+        this.chatListOpen = true;
+      } else {
+        this.chatListOpen = false;
+        this.profileOpen = false;
+        this.windowOpen = true;
+      }
+    };
+    // События для скрытия и открытия портфолио и списка чатов
     window.onkeydown = e => {
       if (e.ctrlKey && e.key === "ArrowLeft") {
         this.toggleChatList();
+      } else if (e.ctrlKey && e.key === "ArrowRight") {
+        this.toggleProfile();
       }
     };
   }
@@ -52,10 +81,31 @@ export class ChatComponent implements OnInit {
   setMailActive(mail) {
     this._chatService.setActiveMail(mail);
     this.getMailActive();
+    this.scrollToEnd();
   }
 
   toggleChatList() {
+    if (window.innerWidth < 769) {
+      if (!this.chatListOpen) {
+        this.profileOpen = false;
+        this.windowOpen = false;
+      } else {
+        this.windowOpen = true;
+      }
+    }
     this.chatListOpen = !this.chatListOpen;
+  }
+
+  toggleProfile() {
+    if (window.innerWidth < 769) {
+      if (!this.profileOpen) {
+        this.chatListOpen = false;
+        this.windowOpen = false;
+      } else {
+        this.windowOpen = true;
+      }
+    }
+    this.profileOpen = !this.profileOpen;
   }
 
   @HostListener("window:resize", ["$event"])
@@ -65,6 +115,10 @@ export class ChatComponent implements OnInit {
     } else {
       this.chatListOpen = false;
     }
+  }
+
+  scrollToEnd() {
+    this.chatScroller.nativeElement.scrollTop = this.chatScroller.nativeElement.scrollHeight;
   }
 
   /*----------  Функции для фильтра  ----------*/
