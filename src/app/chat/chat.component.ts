@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { ChatService } from "../core";
-import { trigger, style, animate, transition } from "@angular/animations";
 
 @Component({
   selector: "app-chat",
@@ -8,9 +7,6 @@ import { trigger, style, animate, transition } from "@angular/animations";
   styleUrls: ["./chat.component.scss"]
 })
 export class ChatComponent implements OnInit {
-  /*----------  Переменные second menu  ----------*/
-  public showSecondMenu = false;
-
   /*----------  Переменные для фильтра  ----------*/
   public filterList;
   public filterActive;
@@ -46,11 +42,6 @@ export class ChatComponent implements OnInit {
   setMailActive(mail) {
     this._chatService.setActiveMail(mail);
     this.getMailActive();
-  }
-
-  /*----------  Функции для second menu  ----------*/
-  toggleSecondMenu() {
-    this.showSecondMenu = !this.showSecondMenu;
   }
 
   /*----------  Функции для фильтра  ----------*/

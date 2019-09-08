@@ -1,1 +1,20 @@
-<p>second-menu works!</p>
+<div class="second-menu" [class.second-menu--open]="showSecondMenu">
+  <div class="second-menu__body">
+    <div class="second-menu__tabs">
+      <app-component-tabs [tabs-list]="tabsList" [tab-active]="tabActive" (tabChanged)="changeTab($event)">
+      </app-component-tabs>
+    </div>
+
+    <div class="second-menu__filter">
+      <p>{{filterMessage}} </p>
+
+      <app-component-filter [filter-list]="filterList" [filter-active]="filterActive"
+        (filterChanged)="changeFilter($event)"></app-component-filter>
+    </div>
+  </div>
+
+  <div class="second-menu__footer animated slideInDown delay-1s faster" (click)="toggleSecondMenu()"
+    [class.second-menu__footer--open]="showSecondMenu">
+    <span class="material-icons">sort</span>
+  </div>
+</div>
