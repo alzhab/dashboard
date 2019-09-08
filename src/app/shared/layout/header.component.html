@@ -15,7 +15,7 @@
         <span class="notification-box__notification material-icons" [class.active]="notificationList?.length"
           [class.notification-box__notification--active]="openNotList && notificationList?.length"
           (click)="toggleNotificationList()">notifications_none</span>
-        <ul class="notification-box__list" *ngIf="openNotList" [@enterAnimation]>
+        <ul class="drop__list" *ngIf="openNotList" [@enterAnimation]>
           <li *ngFor="let not of notificationList; let id = index" (click)="removeNotification(index)">
             <a>
               <div class="avatar"><img [src]="'../../../assets/img/' + not.avatar" alt=""></div>
@@ -31,7 +31,22 @@
         <div class="portfolio__avatar">
           <img src="../../../assets/img/avatar.jpg" alt="">
         </div>
-        <span class=" material-icons portfolio__arrow">keyboard_arrow_down</span>
+        <span class=" material-icons portfolio__arrow" (click)="toggleUserMenuList()">keyboard_arrow_down</span>
+
+        <ul class="drop__list" *ngIf="openUserList" [@enterAnimation]>
+          <li>
+            <a>
+              <span class="material-icons">settings</span>
+              <p class="author">Portfolio</p>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="material-icons">home</span>
+              <p class="author">Sign Out</p>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

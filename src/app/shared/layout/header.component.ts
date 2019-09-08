@@ -23,6 +23,7 @@ import { UnreadMail } from "../../core/models";
 export class HeaderComponent implements OnInit {
   public notification = true;
   public openNotList = false;
+  public openUserList = false;
   public menuOpenMobile = false;
   public notificationList: UnreadMail[];
 
@@ -41,11 +42,16 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  toggleUserMenuList(){
+    this.openUserList = !this.openUserList
+  }
+
   removeNotification(index) {
     this.notificationList.splice(index, 1);
   }
 
-  menuToggle() {
+  menuNotToggle() {
     this._asideService.asideToggle();
   }
+
 }

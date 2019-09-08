@@ -105,7 +105,7 @@
   color: $active-color;
 }
 
-.notification-box__list {
+.drop__list {
   position: absolute;
   display: block;
   overflow: hidden;
@@ -169,6 +169,19 @@
   align-items: center;
   cursor: pointer;
   margin-left: 25px;
+  position: relative;
+  .drop__list {
+    left: -50px;
+    a{
+      width: 100%;
+    }
+    span {
+      padding: 10px;
+    }
+    span:hover {
+      background: none;
+    }
+  }
 }
 
 .portfolio__avatar {
@@ -184,7 +197,6 @@
 }
 
 @media (min-width: 426px) {
-
 }
 
 @media (min-width: 769px) {

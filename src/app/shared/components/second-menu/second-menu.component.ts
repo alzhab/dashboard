@@ -20,7 +20,13 @@ export class SecondMenuComponent implements OnInit {
   @Input("tab-active") public tabActive;
   @Output() public tabChanged = new EventEmitter();
 
-  constructor() {}
+  constructor() {
+    document.addEventListener("keydown", e => {
+      if (e.ctrlKey && e.key === "ArrowDown") {
+        this.toggleSecondMenu();
+      }
+    });
+  }
 
   ngOnInit() {}
 

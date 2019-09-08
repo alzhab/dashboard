@@ -17,6 +17,7 @@ export class ChatComponent implements OnInit {
    *
    * TO DO LIST
    * scrollToEnd() при загрузке страницы
+   * при переходе со страницы, начать анимацию элементов
    *
    */
 
@@ -51,13 +52,13 @@ export class ChatComponent implements OnInit {
       }
     };
     // События для скрытия и открытия портфолио и списка чатов
-    window.onkeydown = e => {
+    document.addEventListener("keydown", e => {
       if (e.ctrlKey && e.key === "ArrowLeft") {
         this.toggleChatList();
       } else if (e.ctrlKey && e.key === "ArrowRight") {
         this.toggleProfile();
       }
-    };
+    });
   }
 
   ngOnInit() {
