@@ -6,6 +6,7 @@
   </app-component-second-menu>
 
   <div class="chat__body">
+    <!-- Боковая панель с списком чатов -->
     <div class="chat__list animated slideInLeft faster" [class.chat__list--open]="chatListOpen">
       <div class="arrow" (click)="toggleChatList()" [class.open]="chatListOpen">
         <span class="material-icons">keyboard_arrow_right</span>
@@ -33,6 +34,22 @@
 
       <div class="chat__card chat__card--last">
         <div class="card__button"><span>+</span> New coversation</div>
+      </div>
+    </div>
+
+    <!-- Окно чата -->
+    <div class="chat__window">
+      <div class="scroll-container"></div>
+      <div class="chat__send">
+        <form>
+          <input type="text" placeholder="Write a message">
+          <div>
+            <label class="custom-file-upload">
+              <input type="file" />
+              <span class="material-icons">attach_file</span>
+            </label>
+          </div>
+        </form>
       </div>
     </div>
   </div>
