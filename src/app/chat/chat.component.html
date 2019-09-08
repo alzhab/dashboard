@@ -1,5 +1,4 @@
 <section class="chat">
-
   <app-component-second-menu [message]="'Filter message'" [tabs-list]="tabsList" [tab-active]="tabActive"
     (tabChanged)="tabChange($event)" [filter-list]="filterList" [filter-active]="filterActive"
     (filterChanged)="filterChange($event)">
@@ -18,16 +17,18 @@
           <div class="card__author-detail">
             <div class="card__author">
               <a href="">
-                <img [src]="'../../assets/img/' + mail.avatar" alt="">
+                <img [src]="'../../assets/img/' + mail.avatar" alt="" />
               </a>
-              <p>{{mail.name}}</p>
+              <p>{{ mail.name }}</p>
             </div>
 
-            <p class="card__date" [class.readed]="mail.readed">{{mail.date}}</p>
+            <p class="card__date" [class.readed]="mail.readed">
+              {{ mail.date }}
+            </p>
           </div>
 
           <p class="card__message">
-            {{mail.message}}
+            {{ mail.message }}
           </p>
         </div>
       </div>
@@ -38,11 +39,41 @@
     </div>
 
     <!-- Окно чата -->
-    <div class="chat__window">
-      <div class="scroll-container"></div>
+    <div class="chat__window animated slideInLeft faster" [class.chat__window--close]="chatListOpen">
+      <div class="scroll-container">
+        <div class="chat__message">
+          <a class="avatar">
+            <img src="../../assets/img/author1.png" alt="" />
+          </a>
+          <div class="message">
+            <p>
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ulla pariatur Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere tempora,
+              sed quaerat magnam eligendi facilis consequatur id pariatur adipisci accusamus quisquam accusantium
+              impedit mollitia consectetur beatae, dolorem ab voluptates deleniti?
+            </p>
+            <span>4 April 2016, 5:32 PM</span>
+          </div>
+        </div>
+
+        <div class="chat__message user-message">
+          <a class="avatar">
+            <img src="../../assets/img/author1.png" alt="" />
+          </a>
+          <div class="message">
+            <p>
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ulla pariatur Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere tempora,
+              sed quaerat magnam eligendi facilis consequatur id pariatur adipisci accusamus quisquam accusantium
+              impedit mollitia consectetur beatae, dolorem ab voluptates deleniti?
+            </p>
+            <span>4 April 2016, 5:32 PM</span>
+          </div>
+        </div>
+      </div>
       <div class="chat__send">
         <form>
-          <input type="text" placeholder="Write a message">
+          <input type="text" placeholder="Write a message" />
           <div>
             <label class="custom-file-upload">
               <input type="file" />
@@ -53,5 +84,4 @@
       </div>
     </div>
   </div>
-
 </section>

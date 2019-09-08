@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, HostListener } from "@angular/core";
 import { ChatService } from "../core";
 
 @Component({
@@ -18,9 +18,18 @@ export class ChatComponent implements OnInit {
   /*----------  Переменные для чатов  ----------*/
   public mailsList;
   public activeMail;
-  public chatListOpen = false;
+  public chatListOpen;
 
-  constructor(private _chatService: ChatService) {}
+  constructor(private _chatService: ChatService) {
+    if (window.innerWidth >= 769) {
+      this.chatListOpen = true;
+    }
+    window.onkeydown = e => {
+      if (e.ctrlKey && e.key === "ArrowLeft") {
+        this.toggleChatList();
+      }
+    };
+  }
 
   ngOnInit() {
     this.getMailsList();
@@ -47,6 +56,15 @@ export class ChatComponent implements OnInit {
 
   toggleChatList() {
     this.chatListOpen = !this.chatListOpen;
+  }
+
+  @HostListener("window:resize", ["$event"])
+  setChatListOpen() {
+    if (window.innerWidth > 769) {
+      this.chatListOpen = true;
+    } else {
+      this.chatListOpen = false;
+    }
   }
 
   /*----------  Функции для фильтра  ----------*/

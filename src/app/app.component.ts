@@ -1,4 +1,10 @@
-import { Component, ElementRef, ViewChild, AfterViewInit } from "@angular/core";
+import {
+  Component,
+  ElementRef,
+  ViewChild,
+  AfterViewInit,
+  HostListener
+} from "@angular/core";
 
 @Component({
   selector: "app-root",
@@ -16,10 +22,10 @@ export class AppComponent implements AfterViewInit {
     this.wrap.nativeElement.style.height =
       window.innerHeight - this.headerHeight + "px";
   }
-
-  constructor() {
-    window.onresize = e => {
-      this.headerHeight = this.header.nativeElement.offsetHeight;
-    };
+  @HostListener("window:resize", ["$event"])
+  setWrapHeight() {
+    this.headerHeight = this.header.nativeElement.offsetHeight;
+    this.wrap.nativeElement.style.height =
+      window.innerHeight - this.headerHeight + "px";
   }
 }
