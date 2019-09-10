@@ -16,6 +16,7 @@ export class AsideComponent implements OnInit {
     _router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
         this.activeLink = event.url.replace(/\//g, "");
+        console.log(this.activeLink);
       }
     });
     this.getAsideStatus();

@@ -28,10 +28,12 @@
         </ul>
       </div>
       <div class="portfolio">
-        <div class="portfolio__avatar">
-          <img src="../../../assets/img/avatar.jpg" alt="">
+        <div class="porifolio__menu-button" (click)="toggleUserMenuList()">
+          <div class="portfolio__avatar">
+            <img src="../../../assets/img/avatar.jpg" alt="">
+          </div>
+          <span class=" material-icons portfolio__arrow">keyboard_arrow_down</span>
         </div>
-        <span class=" material-icons portfolio__arrow" (click)="toggleUserMenuList()">keyboard_arrow_down</span>
 
         <ul class="drop__list" *ngIf="openUserList" [@enterAnimation]>
           <li>

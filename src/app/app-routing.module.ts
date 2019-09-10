@@ -6,14 +6,14 @@ const routes: Routes = [
     path: "",
     loadChildren: () =>
       import("./content/content.module").then(mod => mod.ContentModule),
-      data: {animation: 'Content'},
+    data: { animation: "Content" }
   },
   {
     path: "auth",
-    loadChildren: () => import("./auth/auth.module").then(mod => mod.AuthModule),
-    data: {animation: 'Auth'},
-  },
-  { path: "**", redirectTo: "" }
+    loadChildren: () =>
+      import("./auth/auth.module").then(mod => mod.AuthModule),
+    data: { animation: "Auth" }
+  }
 ];
 
 @NgModule({

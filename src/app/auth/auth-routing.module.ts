@@ -11,7 +11,8 @@ const routes: Routes = [
         path: "sign-in",
         loadChildren: () =>
           import("./sign-in/sign-in.module").then(mod => mod.SignInModule)
-      }
+      },
+      { path: "**", redirectTo: "sign-in" }
     ]
   }
 ];
