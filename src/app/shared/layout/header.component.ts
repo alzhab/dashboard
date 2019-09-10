@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { trigger, style, animate, transition } from "@angular/animations";
-import { ChatService, AsideService } from "../../core/services";
+import { ChatService, AsideService } from "../../core";
 import { UnreadMail } from "../../core/models";
 
 @Component({
@@ -42,8 +42,8 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  toggleUserMenuList(){
-    this.openUserList = !this.openUserList
+  toggleUserMenuList() {
+    this.openUserList = !this.openUserList;
   }
 
   removeNotification(index) {
@@ -54,4 +54,8 @@ export class HeaderComponent implements OnInit {
     this._asideService.asideToggle();
   }
 
+  menuToggle() {
+    this.menuOpenMobile = !this.menuOpenMobile;
+    this._asideService.asideToggle();
+  }
 }

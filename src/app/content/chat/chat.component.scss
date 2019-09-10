@@ -1,5 +1,5 @@
-@import "../../assets/scss/theme.scss";
-@import "../../assets/scss/helpers.scss";
+@import "../../../assets/scss/theme.scss";
+@import "../../../assets/scss/helpers.scss";
 
 .chat {
   height: 100%;
@@ -34,7 +34,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: $font-color;
     span {
       font-size: 2rem;
     }
@@ -92,7 +92,7 @@
   }
   p {
     font-size: 1.2rem;
-    color: #fff;
+    color: $font-color;
     font-weight: 700;
     letter-spacing: 0.44px;
   }
@@ -104,12 +104,12 @@
   font-weight: 700;
 
   &.readed {
-    color: #9ca1b2;
+    color: $font-second;
   }
 }
 
 .card__message {
-  color: #9ca1b2;
+  color: $font-second;
   font-size: 1rem;
   letter-spacing: 0.32px;
   line-height: 28px;
@@ -122,7 +122,7 @@
   padding: 10px;
   background: $active-color;
   text-align: center;
-  color: #fff;
+  color: $font-color;
   font-size: 1rem;
   border-radius: 5px;
   display: flex;
@@ -168,7 +168,7 @@
     max-width: 70%;
     p {
       background: $brand-color;
-      color: #fff;
+      color: $font-color;
       padding: 10px;
       border-radius: 10px;
       border-bottom-left-radius: 0;
@@ -178,7 +178,7 @@
       line-height: 20px;
     }
     span {
-      color: #9ca1b2;
+      color: $font-second;
       font-size: 0.8rem;
     }
   }
@@ -212,7 +212,7 @@
     border: 1px solid rgba(156, 161, 178, 0.3);
     border-radius: 10px;
     input {
-      color: #9ca1b2;
+      color: $font-second;
       outline: none;
       display: block;
       padding: 14px 23px;
@@ -234,7 +234,7 @@
       .custom-file-upload {
         display: inline-block;
         cursor: pointer;
-        color: #9ca1b2;
+        color: $font-second;
       }
     }
   }
@@ -283,19 +283,19 @@
     padding: 0px 10px;
     margin-bottom: 55px;
     h2 {
-      color: #fff;
+      color: $font-color;
       margin-bottom: 8px;
       letter-spacing: 0.44px;
       font-size: 1.2rem;
     }
     span {
-      color: #9ea3b4;
+      color: $font-second;
       letter-spacing: 0.32px;
       display: block;
       margin-bottom: 27px;
     }
     p {
-      color: #9ea3b4;
+      color: $font-second;
       line-height: 28px;
       font-size: 1rem;
       font-weight: 500;
@@ -311,14 +311,14 @@
       margin-bottom: 26px;
       span {
         font-size: 0.9rem;
-        color: #9ca1b2;
+        color: $font-second;
         font-weight: 500;
         display: block;
         margin-bottom: 19px;
       }
       p {
         font-size: 1rem;
-        color: #fff;
+        color: $font-color;
         font-weight: 500;
       }
     }
@@ -336,7 +336,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: $font-color;
     span {
       font-size: 2rem;
     }

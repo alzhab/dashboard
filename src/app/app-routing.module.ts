@@ -1,10 +1,17 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+import { AuthGuardService } from "./core";
 
 const routes: Routes = [
   {
-    path: "chat",
-    loadChildren: () => import("./chat/chat.module").then(mod => mod.ChatModule)
+    path: "",
+    loadChildren: () =>
+      import("./content/content.module").then(mod => mod.ContentModule),
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: "auth",
+    loadChildren: () => import("./auth/auth.module").then(mod => mod.AuthModule)
   }
 ];
 

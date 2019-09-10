@@ -5,7 +5,7 @@ import {
   ViewChild,
   ElementRef
 } from "@angular/core";
-import { ChatService } from "../core";
+import { ChatService } from "../../core";
 
 @Component({
   selector: "app-chat",
