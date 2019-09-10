@@ -1,0 +1,120 @@
+@import "../../assets/scss/theme.scss";
+
+.main {
+  height: 100vh;
+  background: url("../../assets/img/auth-back.jpg") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main__form-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  height: 70%;
+  margin-bottom: 50px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.main__info {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  background: #3fcfdb;
+  h2 {
+    color: $font-color;
+    position: relative;
+    margin-bottom: 15px;
+    font-size: 2rem;
+  }
+  p {
+    color: $font-color;
+    position: relative;
+    font-weight: 300;
+    font-size: 1rem;
+  }
+}
+
+.main__form {
+  width: 50%;
+  height: 100%;
+  background: $brand-back;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+}
+
+form {
+  .input-box {
+    position: relative;
+    margin-bottom: 30px;
+
+    label {
+      color: #aaa;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      cursor: text;
+      -webkit-transition: all 0.2s;
+      transition: all 0.2s;
+      font-weight: 300;
+      &.active {
+        top: -10px;
+      }
+    }
+    input {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #444951;
+      padding: 10px 0;
+      background: none;
+      color: #8a8d93;
+      outline: none;
+      font-size: 1rem;
+    }
+  }
+
+  .btn {
+    border: 1px solid transparent;
+    padding: 0.45rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    background: #3fcfdb;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 30px;
+  }
+
+  .links {
+    list-style: none;
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+      span {
+        color: $font-color;
+        font-weight: 300;
+        display: block;
+        margin-right: 5px;
+        font-size: 0.8rem;
+      }
+      a {
+        color: #3fcfdb;
+        font-weight: 300;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

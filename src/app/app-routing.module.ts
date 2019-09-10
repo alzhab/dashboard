@@ -1,18 +1,19 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { AuthGuardService } from "./core";
 
 const routes: Routes = [
   {
     path: "",
     loadChildren: () =>
       import("./content/content.module").then(mod => mod.ContentModule),
-    canActivate: [AuthGuardService]
+      data: {animation: 'Content'},
   },
   {
     path: "auth",
-    loadChildren: () => import("./auth/auth.module").then(mod => mod.AuthModule)
-  }
+    loadChildren: () => import("./auth/auth.module").then(mod => mod.AuthModule),
+    data: {animation: 'Auth'},
+  },
+  { path: "**", redirectTo: "" }
 ];
 
 @NgModule({

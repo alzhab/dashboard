@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import { trigger, style, animate, transition } from "@angular/animations";
-import { ChatService, AsideService } from "../../core";
+import { ChatService, AsideService, UserService } from "../../core";
 import { UnreadMail } from "../../core/models";
 
 @Component({
@@ -29,7 +30,9 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private _chatService: ChatService,
-    private _asideService: AsideService
+    private _asideService: AsideService,
+    private _userService: UserService,
+    private _router: Router
   ) {}
 
   ngOnInit() {
@@ -57,5 +60,9 @@ export class HeaderComponent implements OnInit {
   menuToggle() {
     this.menuOpenMobile = !this.menuOpenMobile;
     this._asideService.asideToggle();
+  }
+
+  signOut() {
+    this._router.navigate(["auth/sign-in"]);
   }
 }
