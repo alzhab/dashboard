@@ -14,7 +14,10 @@
 
 .projects__table {
   width: 100%;
-
+  tr,
+  td {
+    box-sizing: border-box;
+  }
   transition: 0.3s ease all;
   .spacer {
     padding-bottom: 25px;
@@ -24,7 +27,6 @@
 .projects__row {
   width: 100%;
   border-radius: 5px;
-  background-color: #3a3e52;
   td:first-child {
     position: relative;
     &:after {
@@ -58,6 +60,9 @@
 .projects__row--heading {
   background: none;
   border-radius: 0;
+  .projects__cell {
+    background: none;
+  }
   td {
     padding: 20px 50px !important;
     &:after {
@@ -69,6 +74,7 @@
 .projects__cell {
   padding: 25px 35px 25px 50px;
   vertical-align: middle;
+  background: #3a3e52;
   // Heading
   h5 {
     color: $font-second;

@@ -26,19 +26,48 @@
   }
 
   .dots {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    height: 20px;
     margin-left: auto;
-    span {
-      border-radius: 50%;
-      background: $font-second;
-      display: block;
-      width: 4px;
-      height: 4px;
-      &:nth-child(2) {
-        margin: auto 0;
+    position: relative;
+    ul {
+      position: absolute;
+      list-style: none;
+      left: -15px;
+      bottom: 0;
+      transform: translateX(-100%);
+      border-radius: 10px 10px 0 0;
+      transition: 0.3s ease all;
+      overflow: hidden;
+      li {
+        a {
+          cursor: pointer;
+          display: block;
+          color: $font-color;
+          background: $brand-back;
+          padding: 10px 50px 10px 10px;
+          border-bottom: 1px solid $active-color;
+          transition: 0.3s ease all;
+          font-weight: 700;
+          &:hover {
+            background: $active-color;
+          }
+        }
+      }
+    }
+    div {
+      cursor: pointer;
+      padding: 0px 15px;
+      display: flex;
+      flex-direction: column;
+      height: 20px;
+      span {
+        border-radius: 50%;
+        background: $font-second;
+        display: block;
+        width: 4px;
+        height: 4px;
+        &:nth-child(2) {
+          margin: auto 0;
+        }
       }
     }
   }

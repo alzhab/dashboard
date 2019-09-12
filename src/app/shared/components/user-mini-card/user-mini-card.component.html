@@ -7,8 +7,16 @@
   </div>
 
   <div class="dots">
-    <span></span>
-    <span></span>
-    <span></span>
+    <div (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul *ngIf="showMenu" [@enterAnimation]>
+      <li><a>Profile</a></li>
+      <li><a>Chat</a></li>
+      <li><a>Delete</a></li>
+    </ul>
   </div>
 </div>

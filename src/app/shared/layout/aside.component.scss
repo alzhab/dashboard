@@ -77,6 +77,8 @@
   }
 
   .aside__menu {
+    overflow-y: initial;
+
     li {
       padding: 33px;
       a {
