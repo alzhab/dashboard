@@ -21,7 +21,7 @@ export class AsideComponent implements OnInit {
     });
     this.getAsideStatus();
     this._subscription = this._asideService.asideUpdated.subscribe(value => {
-      this.asideOpen = value;
+      this.asideOpen = value; 
     });
     window.onresize = e => {
       this.asideOpen = false;

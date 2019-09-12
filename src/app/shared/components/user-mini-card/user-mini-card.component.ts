@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { trigger, transition, style, animate } from "@angular/animations";
 
 @Component({
@@ -19,6 +19,7 @@ import { trigger, transition, style, animate } from "@angular/animations";
   ]
 })
 export class UserMiniCardComponent implements OnInit {
+  @Input('user') user
   public showMenu = false;
 
   constructor() {}

@@ -1,18 +1,18 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class ProjectsService {
   private filterList = ["all", "progress up", "progress down"];
   private activeFilter = this.filterList[0];
-  
+
   private tabsList = [
-    { icon: null, text: "All Projects (358)" },
-    { icon: null, text: "Workflow" },
+    { icon: null, text: "all projects" },
+    { icon: null, text: "workflow" }
   ];
   private activeTab = this.tabsList[0].text;
-  constructor() { }
+  constructor() {}
 
   /*----------  Функции для не фиьлтра  ----------*/
 

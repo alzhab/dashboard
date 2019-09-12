@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ProjectsService } from "../../core";
+import { Router, NavigationStart } from "@angular/router";
 
 @Component({
   selector: "app-projects",
@@ -15,7 +16,10 @@ export class ProjectsComponent implements OnInit {
   public tabsList;
   public tabActive;
 
-  constructor(private _projectsService: ProjectsService) {}
+  constructor(
+    private _projectsService: ProjectsService,
+    private _router: Router
+  ) {}
 
   ngOnInit() {
     this.getFilterList();
@@ -52,5 +56,8 @@ export class ProjectsComponent implements OnInit {
   tabChange(value) {
     this._projectsService.setActiveTab(value);
     this.getActiveTab();
+    this._router.navigate(["projects/" + this.tabActive.replace(/\s/g, "-")]);
   }
+
+  
 }

@@ -1,11 +1,28 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { ProjectsComponent } from './projects.component'
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { ProjectsComponent } from "./projects.component";
+
+import { AllProjectsComponent } from "./all-projects/all-projects.component";
+import { WorkflowComponent } from "./workflow/workflow.component";
 
 const routes: Routes = [
   {
-    path: '',
-    component: ProjectsComponent
+    path: "",
+    component: ProjectsComponent,
+    children: [
+      {
+        path: "",
+        redirectTo: "all-projects"
+      },
+      {
+        path: "all-projects",
+        component: AllProjectsComponent
+      },
+      {
+        path: "workflow",
+        component: WorkflowComponent
+      }
+    ]
   }
 ];
 
@@ -13,4 +30,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ProjectsRoutingModule { }
+export class ProjectsRoutingModule {}
