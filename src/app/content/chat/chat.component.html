@@ -6,7 +6,7 @@
 
   <div class="chat__body">
     <!-- Боковая панель с списком чатов -->
-    <div class="chat__list animated slideInLeft faster" [class.chat__list--open]="chatListOpen">
+    <div class="chat__list animated slideInLeft faster delay-05s" [class.chat__list--open]="chatListOpen">
       <div class="arrow" (click)="toggleChatList()" [class.open]="chatListOpen">
         <span class="material-icons">keyboard_arrow_right</span>
       </div>
@@ -39,7 +39,7 @@
     </div>
 
     <!-- Окно чата -->
-    <div class="chat__window animated slideInRight fast" [class.chat__window--close]="!windowOpen">
+    <div class="chat__window animated slideInRight fast delay-05s" [class.chat__window--close]="!windowOpen">
 
 
       <div class="scroll-container" #chatScroller>

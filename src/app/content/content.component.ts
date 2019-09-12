@@ -6,10 +6,14 @@ import {
   HostListener
 } from "@angular/core";
 
+import { slideInAnimation } from "../shared";
+import { RouterOutlet } from "@angular/router";
+
 @Component({
   selector: "app-content",
   templateUrl: "./content.component.html",
-  styleUrls: ["./content.component.scss"]
+  styleUrls: ["./content.component.scss"],
+  animations: [slideInAnimation]
 })
 export class ContentComponent implements AfterViewInit {
   @ViewChild("header", { static: true }) header: ElementRef;
@@ -27,5 +31,13 @@ export class ContentComponent implements AfterViewInit {
     this.headerHeight = this.header.nativeElement.offsetHeight;
     this.wrap.nativeElement.style.height =
       window.innerHeight - this.headerHeight + "px";
+  }
+
+  prepareRoute(outlet: RouterOutlet) {
+    return (
+      outlet &&
+      outlet.activatedRouteData &&
+      outlet.activatedRouteData["animation"]
+    );
   }
 }

@@ -13,10 +13,10 @@ export class AsideComponent implements OnInit {
   private _subscription;
 
   constructor(private _router: Router, private _asideService: AsideService) {
+    this.activeLink = this._router.url.replace(/\//g, "");
     _router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
         this.activeLink = event.url.replace(/\//g, "");
-        console.log(this.activeLink);
       }
     });
     this.getAsideStatus();

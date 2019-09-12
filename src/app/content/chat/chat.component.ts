@@ -13,13 +13,8 @@ import { ChatService } from "../../core";
   styleUrls: ["./chat.component.scss"]
 })
 export class ChatComponent implements OnInit {
-  /**
-   *
-   * TO DO LIST
-   * scrollToEnd() при загрузке страницы
-   * при переходе со страницы, начать анимацию элементов
-   *
-   */
+  // TODO scrollToEnd() при загрузке страницы
+  // TODO при переходе со страницы, начать анимацию элементов
 
   /*----------  Переменные для фильтра  ----------*/
   public filterList;

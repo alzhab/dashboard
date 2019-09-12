@@ -1,0 +1,6 @@
+<div class="progress-bar">
+  <p>{{value}}%</p>
+  <div>
+    <span [ngStyle]="{'width': value + '%'}" [class.success]="value === 100"></span>
+  </div>
+</div>

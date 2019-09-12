@@ -1,0 +1,47 @@
+@import "../../../../assets/scss/theme.scss";
+
+.mini-card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  .avatar {
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    overflow: hidden;
+    margin-right: 25px;
+  }
+  .info {
+    p {
+      font-weight: 700;
+      color: $font-color;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+    span {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: $font-second;
+    }
+  }
+
+  .dots {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 20px;
+    margin-left: auto;
+    span {
+      border-radius: 50%;
+      background: $font-second;
+      display: block;
+      width: 4px;
+      height: 4px;
+      &:nth-child(2) {
+        margin: auto 0;
+      }
+    }
+  }
+}
+
+// @media (min-width: )

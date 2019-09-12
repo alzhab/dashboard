@@ -1,8 +1,7 @@
 @import "../../../../assets/scss/theme.scss";
 
 .tabs {
-  width: 100%;
-  display: flex;
+  display: inline-flex;
   list-style: none;
   justify-content: space-between;
   li {
@@ -16,6 +15,7 @@
     letter-spacing: 0.36px;
     font-size: 1rem;
     transition: 0.3s ease all;
+    line-height: 20px;
     span {
       display: block;
       margin-right: 12px;

@@ -44,7 +44,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 3px 80px rgba(23, 24, 32, 0.2);
   background-color: #2196f3;
   padding: 20px 10px;
   width: 100%;
@@ -91,7 +90,7 @@
   .second-menu {
     width: 100%;
     position: absolute;
-    top: -102px;
+    top: -105px;
     transition: 0.3s ease all;
   }
 
@@ -104,7 +103,8 @@
     justify-content: space-between;
   }
   .second-menu__tabs {
-    width: 20%;
+    width: initial;
+
     margin-bottom: 0px;
   }
 

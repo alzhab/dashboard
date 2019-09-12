@@ -1,11 +1,19 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
-import { ChatService, AsideService, UserService } from "./services";
+// TODO создать localStorage server. Следить за menu
+// TODO создать json Данные вместо BD
+
+import {
+  ChatService,
+  AsideService,
+  UserService,
+  ProjectsService
+} from "./services";
 
 @NgModule({
   declarations: [],
   imports: [CommonModule],
-  providers: [ChatService, AsideService, UserService]
+  providers: [ChatService, AsideService, UserService, ProjectsService]
 })
 export class CoreModule {}

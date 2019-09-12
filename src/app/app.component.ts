@@ -1,15 +1,12 @@
 import { Component } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
-import { slideInAnimation } from './shared';
+import { slideInAnimation } from "./shared";
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"],
-  animations: [
-    slideInAnimation
-    // animation triggers go here
-  ]
+  animations: [slideInAnimation]
 })
 export class AppComponent {
   prepareRoute(outlet: RouterOutlet) {

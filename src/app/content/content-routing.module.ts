@@ -8,9 +8,21 @@ const routes: Routes = [
     component: ContentComponent,
     children: [
       {
+        path: "",
+        redirectTo: "chat",
+        pathMatch: "full"
+      },
+      {
         path: "chat",
         loadChildren: () =>
-          import("./chat/chat.module").then(mod => mod.ChatModule)
+          import("./chat/chat.module").then(mod => mod.ChatModule),
+        data: { animation: "Chat" }
+      },
+      {
+        path: "projects",
+        loadChildren: () =>
+          import("./projects/projects.module").then(mod => mod.ProjectsModule),
+        data: { animation: "Projects" }
       }
     ]
   }

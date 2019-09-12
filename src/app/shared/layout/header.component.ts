@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
 import { trigger, style, animate, transition } from "@angular/animations";
 import { ChatService, AsideService, UserService } from "../../core";
 import { UnreadMail } from "../../core/models";
@@ -63,6 +63,6 @@ export class HeaderComponent implements OnInit {
   }
 
   signOut() {
-    this._router.navigate(["auth/sign-in"]);
+    this._router.navigate(["auth"]);
   }
 }
